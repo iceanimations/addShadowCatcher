@@ -1,4 +1,7 @@
 import pymel.core as pc
+import site
+site.addsitedir(r"R:/Pipe_Repo/Users/Qurban/utilities")
+import appUsageApp
 
 def _add():
     objects = pc.ls(sl=True)
@@ -21,11 +24,7 @@ def _add():
         pc.delete(engin)
     errors = []
     for eng in shadingEngines:
-#        try:
         pc.editRenderLayerAdjustment(eng.surfaceShader)
         arnold.outColor.connect(eng.surfaceShader, f=True)
-#        except:
-#            errors.append(eng)
-#    pc.warning('Following engines could not connect')
-#    for error in errors:
-#        print error
+        
+    appUsageApp.updateDatabase('addShadowCatcher')
