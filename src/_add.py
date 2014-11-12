@@ -18,7 +18,7 @@ def _add():
         pc.warning("Seems like Arnod is either not installed or not loaded")
         return
     for engin in pc.listConnections(arnold, type='shadingEngine'):
-        pc.delete(engine)
+        pc.delete(engin)
     errors = []
     for eng in shadingEngines:
         try:
