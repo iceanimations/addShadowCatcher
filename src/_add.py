@@ -21,11 +21,11 @@ def _add():
         pc.delete(engin)
     errors = []
     for eng in shadingEngines:
-        try:
-            pc.editRenderLayerAdjustment(eng.surfaceShader)
-            arnold.outColor.connect(eng.surfaceShader, f=True)
-        except:
-            errors.append(eng)
-    pc.warning('Following engines could not connect')
-    for error in errors:
-        print error
+#        try:
+        pc.editRenderLayerAdjustment(eng.surfaceShader)
+        arnold.outColor.connect(eng.surfaceShader, f=True)
+#        except:
+#            errors.append(eng)
+#    pc.warning('Following engines could not connect')
+#    for error in errors:
+#        print error
